@@ -1,0 +1,23 @@
+{
+  "services": [
+    {
+      "name": "tutorly-backend",
+      "source": {
+        "repo": "puhi200620063-cmd/tutorly",
+        "rootDirectory": "backend"
+      },
+      "nixpacks": {
+        "provider": "python",
+        "pythonVersion": "3.12"
+      },
+      "envVars": {
+        "DATABASE_URL": "${{DATABASE_URL}}",
+        "SECRET_KEY": "${{SECRET_KEY}}",
+        "CORS_ORIGINS": "*"
+      },
+      "healthcheck": {
+        "path": "/health"
+      }
+    }
+  ]
+}
